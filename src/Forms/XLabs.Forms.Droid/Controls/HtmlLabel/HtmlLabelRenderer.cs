@@ -29,7 +29,8 @@ namespace XLabs.Forms.Controls
         {
             base.OnElementChanged(e);
 
-            Control?.SetText(Html.FromHtml(Element.Text), TextView.BufferType.Spannable);
+            if(!string.IsNullOrEmpty(Element.Text))
+                Control?.SetText(Html.FromHtml(Element.Text), TextView.BufferType.Spannable);
         }
 
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
